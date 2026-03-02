@@ -1,7 +1,7 @@
 # Blog writting webapp using MERN Stack with CI/CD
 ---
 Basic structure will be:
-![](assets\nginx.webp "This is for docker-compose")
+![](assets/nginx.webp "This is for docker-compose")
 
 ---
 ### SETUP
