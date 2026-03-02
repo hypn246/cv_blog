@@ -1,0 +1,154 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+}
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  overflow-x: hidden;
+}
+main{
+  width: 100%;
+}
+h1{
+  font-size: 2rem;
+}
+h2{
+  font-size: 1.5rem;
+}
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+.center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+nav{
+  display: flex;
+  justify-content: space-between;
+  margin: 0 2rem;
+}
+.logo{
+  height: 5rem;
+}
+nav ul li{
+  padding: 1rem;
+}
+nav ul li:hover{
+  background-color: rgb(104, 195, 240);
+  color: black;
+}
+
+.lazy-btn{
+  margin: 1rem;
+  padding: 0.75rem;
+  border: #f50057 2px solid;
+  border-radius: 1rem;
+}
+.lazy-btn:hover{
+  background-color: #f50057;
+  color: black;
+}
+.lazy-btn2{
+  margin: 1rem;
+  padding: 0.75rem;
+  border: #00CCDD 2px solid;
+  border-radius: 1rem;
+}
+.lazy-btn2:hover{
+  background-color: #00CCDD;
+  color: black;
+}
+.wrapper{
+  /* display: flex;
+  flex-wrap: wrap; */
+  column-count: 3;
+}
+.card-wrapper{
+  /* width: 33%; */
+  break-inside: avoid;
+}
+.card{
+  border: white solid 2px;
+  border-radius: 1rem;
+}
+.card:hover{
+  border: skyblue solid 2px;
+}
+
+.form *{
+  display: block;
+}
+.form input, .form textarea{
+  width: 100%;
+  color: black;
+  padding: 0.75rem;
+  border-radius: 1rem;
+}
+.form label{
+  margin: 1rem 0;
+  text-align: left;
+}
+input[type='file']{
+  padding: 0;
+  /* display: none; */
+}
+.upfile::-webkit-file-upload-button{
+  border-radius: 1rem;
+  margin-top: 1rem;
+  color:white;
+  padding: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+  cursor: pointer;
+  background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+.nav-hide{
+  display: none;
+}
+#drop ul{
+  width: 10rem;
+}
+@media only screen and (max-width: 80rem) {
+  .wrapper{
+    column-count: 2;
+  }
+}
+@media only screen and (max-width: 45rem) {
+  .wrapper{
+    column-count: 1;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .nav-big{
+    display: none;
+  }
+  .nav-hide{
+    display: flex;
+  }
+  nav{
+    margin: 0 0.5rem;
+  }
+}

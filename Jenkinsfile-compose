@@ -1,0 +1,33 @@
+pipeline{
+    agent any
+    stages{
+        stage ('Check') {
+            steps {
+                sh '''
+                    docker version
+                    docker compose version
+                '''
+            }
+        }
+        stage ('Prune') {
+            steps{
+                sh 'docker system prune -a --volumes -f'
+            }
+        }
+        stage ('Run') {
+            steps {
+                sh 'docker compose up -d --no-color --wait'
+                sh 'docker compose ps'
+            }
+        }
+    // hinh nhu jenkins auto clear cache + images cho
+    }
+    //clean up
+    post {
+        always{
+            sh 'docker compose down --remove-orphans -v'
+            sh 'docker compose ps'
+            sh 'docker system prune -a --volumes -f'
+        }
+    }
+}

@@ -1,0 +1,12 @@
+/server/.env.local
+/server/.env.production
+# /server/.env.production
+
+/client/.env.local
+### must delete before change to public
+#/k8s/secret.yaml
+
+/ansible
+/terraform
+secret.md 
+commandd.md 
