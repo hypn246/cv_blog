@@ -46,7 +46,7 @@ At root dir : `docker-compose up`
 *I can not show the detail configs with credential here because I don't know to show it how.*
 
 Basiclly, this is the workflow:
-![workflow](assets\Untitled-2024-10-13-1526.png "Local CI/CD workflow")
+![workflow](assets/Untitled-2024-10-13-1526.png "Local CI/CD workflow")
 
 In short, you commit some change in code to github and 5 mins later, the web will change as you want.
 
