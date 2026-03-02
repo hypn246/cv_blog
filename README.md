@@ -1,9 +1,8 @@
 # Blog writting webapp using MERN Stack with CI/CD
----
+
 Basic structure will be:
 ![](assets/nginx.webp "This is for docker-compose")
 
----
 ### SETUP
 ##### *This project used MongoDB as BD and other config in .env file thus, the .env is necessary for the app especially I have studing devops and cloud recently.*
 
@@ -28,26 +27,24 @@ DB_USERNAME=
 DB_PASSWORD=
 ```
 
----
 ### Run local:
 
 Open 2 different terminal prompt
 1. cd client->npm run dev
 2. cd server->npm run dev
----
+
 #### Run with docker-copmose
 (Docker eninge required)
 At root dir : `docker-compose up`
 
----
+
 ### Intergration with Dockerhub and Jenkins
 **(jenkins with credential and key with github repo are required)**
 
 *I can not show the detail configs with credential here because I don't know to show it how.*
 
-Basiclly, this is the workflow:
-![workflow](assets/Untitled-2024-10-13-1526.png "Local CI/CD workflow")
-
+Workflow:
+![workflow](assets/Untitled-2026-03-02-1709.png "Cloud workflow")
 In short, you commit some change in code to github and 5 mins later, the web will change as you want.
 
 **SETUP:**
@@ -61,6 +58,12 @@ I'm not bốc phét. This project somehow work and I could in AWS in 2024 but i 
 ### With Minikube (local K8s)
 #### **k8s note**:
 **(kubectl, minikube, argo installed with credential and key with github repo are required)**
+
+Basiclly, this is the workflow:
+![workflow](assets/Untitled-2024-10-13-1526.png "Local CI/CD workflow")
+
+**SETUP:**
+
 - Add MongoDB info in `k8s\secret.yaml` with base64 encoded but use a *base64 encode first* with
 ```yaml
 data:
@@ -70,6 +73,5 @@ data:
   DB_USERNAME: 
   DB_PASSWORD: 
 ```
-
 - Change the docker image in `k8s\app-deployment.yaml` to your built from this project.
 - After all, push into **your own private github** (for secure reason) and add the github link to `application.yaml`
